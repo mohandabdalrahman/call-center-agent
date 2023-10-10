@@ -15,21 +15,37 @@
     padding: 20px;
     border-radius: 10px;
     margin: 0 auto;
-    width: 400px;
+    width: 500px;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    @media (max-width: 576px) {
+      width: 80%
+    }
+
+    form {
+      width: 100%;
+    }
 
     .logo {
       width: 200px;
       height: 100px;
       margin: 0 auto;
+      text-align: center;
 
       img {
         width: 100%;
+        max-width: 200px;
+      }
+
+      @media (max-width: 576px) {
+        width: 100%;
+        p {
+          font-size: .8em;
+        }
       }
 
     }

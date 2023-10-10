@@ -1,0 +1,51 @@
+@import "src/app/scss/variables";
+
+nb-card {
+  &-header {
+    color: $main-color;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+
+  .card {
+    &-content {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+
+      &-info {
+        b {
+          font-size: 18px;
+          color: #222b45;
+          text-transform:capitalize;
+        }
+
+        span {
+          color: #222b45;
+          display: block;
+          margin-top: 1em;
+        }
+      }
+
+      &-img {
+        background-image: linear-gradient(to right,#598bff,#174d9e);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5.75rem;
+        height: 75px;
+        transition: width .4s ease;
+        transform: translate(0);
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        padding: 0.625rem;
+
+        nb-icon {
+          color: #fff;
+          font-size: 2.5rem;
+        }
+      }
+    }
+  }
+}

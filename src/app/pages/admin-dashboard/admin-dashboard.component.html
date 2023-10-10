@@ -1,0 +1,12 @@
+<welcome-card>
+  <h3>Hi,Administrator</h3>
+  <p>Welcome aboard! We are proud to you with us.</p>
+</welcome-card>
+
+<div class="row">
+  <div class="col-md-6" *ngFor="let card of cards">
+    <statics-card [name]="card.name" [count]="card.count"  [icon]="card.icon"></statics-card>
+  </div>
+</div>
+
+

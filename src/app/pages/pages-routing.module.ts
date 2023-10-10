@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 
 import {PagesComponent} from './pages.component';
 import {NotFoundComponent} from './miscellaneous/not-found/not-found.component';
+import {AdminDashboardComponent} from "./admin-dashboard/admin-dashboard.component";
 
 const routes: Routes = [{
   path: '',
@@ -14,9 +15,13 @@ const routes: Routes = [{
         .then(m => m.MiscellaneousModule),
     },
     {
-      path: '',
-      redirectTo: 'dashboard',
-      pathMatch: 'full',
+      path: 'dashboard',
+      component: AdminDashboardComponent,
+    },
+    {
+      path: "",
+      redirectTo: "dashboard",
+      pathMatch: "full",
     },
     {
       path: '**',
