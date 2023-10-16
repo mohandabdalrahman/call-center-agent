@@ -1,7 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
-import { map, takeUntil } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {NbMediaBreakpointsService, NbMenuItem, NbMenuService, NbSidebarService, NbThemeService} from '@nebular/theme';
+import {filter, map, takeUntil} from 'rxjs/operators';
+import {Subject, Subscription} from 'rxjs';
+import {ModalComponent} from "@theme/components/modal/modal.component";
 
 @Component({
   selector: 'ngx-header',
@@ -9,7 +10,7 @@ import { Subject } from 'rxjs';
   templateUrl: './header.component.html',
 })
 export class HeaderComponent implements OnInit, OnDestroy {
-
+  @ViewChild('confirm') confirmModal: ModalComponent
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
   user: any;
@@ -35,7 +36,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
+  userMenu: NbMenuItem[] = [{title: 'Change Password', icon: "lock-outline"}, {
+    title: 'Logout',
+    icon: "log-out-outline",
+  }];
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
@@ -45,7 +49,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
-    const { xl } = this.breakpointService.getBreakpointsMap();
+    const {xl} = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
       .pipe(
         map(([, currentBreakpoint]) => currentBreakpoint.width < xl),
@@ -55,10 +59,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
     this.themeService.onThemeChange()
       .pipe(
-        map(({ name }) => name),
+        map(({name}) => name),
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+
+    this.menuService.onItemClick().pipe(
+      filter(({tag}) => tag === 'my-context-menu'),
+      map(({item: {title}}) => title),
+    ).subscribe(title => {
+      if (title === 'Logout') {
+      this.confirmModal.open()
+    }
+    })
   }
 
   ngOnDestroy() {
@@ -78,5 +91,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  logout() {
+  //   handle logout here
   }
 }

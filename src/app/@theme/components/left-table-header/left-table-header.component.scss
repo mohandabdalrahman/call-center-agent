@@ -1,0 +1,22 @@
+.left-header {
+  display: flex;
+  align-items: center;
+
+  &-icon {
+    margin-right: 0.5em;
+
+    nb-icon {
+      font-size: 1.8em;
+      color: #8f9bb3;
+    }
+
+  }
+
+  &-content {
+    h5 {
+      text-transform: capitalize;
+      font-size: 1.3em;
+      margin: 0;
+    }
+  }
+}

@@ -18,6 +18,14 @@
     ],
     "plugins": [
       { "name": "tslint-language-service"}
-    ]
+    ],
+    "paths": {
+      "@shared/*": ["app/shared/*"],
+      "@helpers/*": ["app/helpers/*"],
+      "@services/*": ["app/services/*"],
+      "@models/*": ["app/models/*"],
+      "@theme/*": ["app/@theme/*"],
+      "@environments/*": ["environments/*"],
+    }
   }
 }

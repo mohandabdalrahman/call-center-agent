@@ -1,0 +1,22 @@
+<div class="table-controls">
+  <button class="click" [nbPopover]="templateRef" [nbPopoverPlacement]="'bottom'" [nbPopoverTrigger]="'click'">
+    <nb-icon icon="more-vertical-outline"></nb-icon>
+  </button>
+
+  <ng-template #templateRef>
+    <div class="click-controls">
+      <a href="" class="eye">
+        <nb-icon icon="eye-outline"></nb-icon>
+        <span>View</span>
+      </a>
+      <a href="" class="edit">
+        <nb-icon icon="edit-2-outline"></nb-icon>
+        <span>Edit</span>
+      </a>
+      <a href="" class="trash">
+        <nb-icon icon="trash-2-outline"></nb-icon>
+        <span>Delete</span>
+      </a>
+    </div>
+  </ng-template>
+</div>

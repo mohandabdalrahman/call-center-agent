@@ -1,0 +1,27 @@
+<div class="data-table">
+  <div class="data-table-header">
+    <ng-content select="[header]"></ng-content>
+  </div>
+  <div class="data-table-search">
+    <ng-content select="[search]"></ng-content>
+  </div>
+  <table class="table dataTable">
+    <thead>
+    <tr>
+      <th *ngFor="let key of colData">
+        {{key.header}}
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let row of rowData">
+      <td *ngFor="let key of colData">
+        {{row[key.field]}}
+      </td>
+    <td *ngIf="tableControls">
+      <table-controls></table-controls>
+    </td>
+    </tbody>
+  </table>
+</div>

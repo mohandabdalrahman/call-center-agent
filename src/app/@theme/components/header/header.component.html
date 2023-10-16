@@ -6,24 +6,38 @@
     <a class="logo" href="#" (click)="navigateHome()"> <img src="./assets/images/logo.png" alt="logo"
                                                             width="200"> </a>
   </div>
-<!--  <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">-->
-<!--    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>-->
-<!--  </nb-select>-->
+  <!--  <nb-select [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">-->
+  <!--    <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>-->
+  <!--  </nb-select>-->
 </div>
 
 <div class="header-container">
   <nb-actions size="small">
 
-    <nb-action class="control-item">
-      <nb-search type="rotate-layout"></nb-search>
-    </nb-action>
-<!--    <nb-action class="control-item" icon="email-outline"></nb-action>-->
-<!--    <nb-action class="control-item" icon="bell-outline"></nb-action>-->
+    <!--    <nb-action class="control-item">-->
+    <!--      <nb-search type="rotate-layout"></nb-search>-->
+    <!--    </nb-action>-->
+    <!--    <nb-action class="control-item" icon="email-outline"></nb-action>-->
+    <!--    <nb-action class="control-item" icon="bell-outline"></nb-action>-->
     <nb-action class="user-action">
       <nb-user [nbContextMenu]="userMenu"
+               nbContextMenuTag="my-context-menu"
                [name]="'ADMIN'"
-               >
+      >
       </nb-user>
     </nb-action>
   </nb-actions>
+
+  <modal #confirm>
+    <div body>
+      Are you sure you want to logout?
+    </div>
+
+    <div class="footer" footer>
+      <button class="btn btn-primary" (click)="confirm.close()">No</button>
+      <button class="btn btn-danger" (click)="logout()">Yes</button>
+    </div>
+  </modal>
+
 </div>
+

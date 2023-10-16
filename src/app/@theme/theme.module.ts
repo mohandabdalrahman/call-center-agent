@@ -11,7 +11,7 @@ import {
   NbButtonModule,
   NbSelectModule,
   NbIconModule,
-  NbThemeModule, NbCardModule,
+  NbThemeModule, NbCardModule, NbPopoverModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 
@@ -39,6 +39,10 @@ import { CORPORATE_THEME } from './styles/theme.corporate';
 import { DARK_THEME } from './styles/theme.dark';
 import { WelcomeCardComponent } from './components/welcome-card/welcome-card.component';
 import { StaticsCardComponent } from './components/statics-card/statics-card.component';
+import { DataTableComponent } from './components/data-table/data-table.component';
+import { TableControlsComponent } from './components/table-controls/table-controls.component';
+import { LeftTableHeaderComponent } from './components/left-table-header/left-table-header.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 const NB_MODULES = [
   NbLayoutModule,
@@ -52,6 +56,9 @@ const NB_MODULES = [
   NbSelectModule,
   NbIconModule,
   NbEvaIconsModule,
+  NbCardModule,
+  NgOptimizedImage,
+  NbPopoverModule
 ];
 const COMPONENTS = [
   HeaderComponent,
@@ -62,7 +69,10 @@ const COMPONENTS = [
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
   WelcomeCardComponent,
-  StaticsCardComponent
+  StaticsCardComponent,
+  DataTableComponent,
+  TableControlsComponent,
+  LeftTableHeaderComponent
 ];
 const PIPES = [
   CapitalizePipe,
@@ -73,9 +83,9 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...NB_MODULES, NbCardModule, NgOptimizedImage],
+  imports: [CommonModule, ...NB_MODULES],
   exports: [CommonModule, ...PIPES, ...COMPONENTS],
-  declarations: [...COMPONENTS, ...PIPES],
+  declarations: [...COMPONENTS, ...PIPES, ModalComponent],
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders<ThemeModule> {

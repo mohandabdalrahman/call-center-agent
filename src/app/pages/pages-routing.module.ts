@@ -19,6 +19,10 @@ const routes: Routes = [{
       component: AdminDashboardComponent,
     },
     {
+      path: 'agencies',
+      loadChildren: () => import('./agencies/agencies.module').then(m => m.AgenciesModule),
+    },
+    {
       path: "",
       redirectTo: "dashboard",
       pathMatch: "full",

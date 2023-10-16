@@ -1,0 +1,14 @@
+.modal {
+  &-header {
+    border: unset;
+  }
+
+  &-body {
+    text-align: center;
+  }
+
+  &-footer {
+    border: 0;
+    justify-content: center;
+  }
+}
