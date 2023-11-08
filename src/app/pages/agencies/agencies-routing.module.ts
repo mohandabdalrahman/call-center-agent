@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: "",
     component: ListAgenciesComponent,
+  },
+  {
+    path:':id/users',
+    loadChildren: () => import('../call-canter-users/call-canter-users.module').then(m => m.CallCanterUsersModule)
   }
 ];
 

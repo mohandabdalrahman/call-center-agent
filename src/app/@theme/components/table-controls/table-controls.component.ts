@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'table-controls',
@@ -7,10 +7,17 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class TableControlsComponent implements OnInit {
-
-  constructor() { }
+  @Input() showView = true;
+  @Input() showUpdate = true;
+  @Input() showDelete = false;
+  @Input() viewLabel = 'View';
+  @Input() updateLabel = 'Edit';
+  @Input() deleteLabel = 'Delete';
+  @Input()  viewLink: string;
+  @Input() id: number;
 
   ngOnInit(): void {
   }
-
 }
+
+

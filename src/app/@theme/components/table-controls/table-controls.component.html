@@ -5,17 +5,17 @@
 
   <ng-template #templateRef>
     <div class="click-controls">
-      <a href="" class="eye">
+      <a [routerLink]="[id,viewLink]" class="eye" *ngIf="showView">
         <nb-icon icon="eye-outline"></nb-icon>
-        <span>View</span>
+        <span>{{viewLabel}}</span>
       </a>
-      <a href="" class="edit">
+      <a href="" class="edit" *ngIf="showUpdate">
         <nb-icon icon="edit-2-outline"></nb-icon>
-        <span>Edit</span>
+        <span>{{updateLabel}}</span>
       </a>
-      <a href="" class="trash">
+      <a href="" class="trash" *ngIf="showDelete">
         <nb-icon icon="trash-2-outline"></nb-icon>
-        <span>Delete</span>
+        <span>{{deleteLabel}}</span>
       </a>
     </div>
   </ng-template>

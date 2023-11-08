@@ -11,6 +11,14 @@ export class DataTableComponent implements OnInit {
   @Input() rowData: any;
   @Input() colData: ColData[] = [];
   @Input() tableControls = true;
+  @Input() showView = true;
+  @Input() showUpdate = true;
+  @Input() showDelete = false;
+  @Input() viewLabel = 'View';
+  @Input() updateLabel = 'Edit';
+  @Input() deleteLabel = 'Delete';
+  @Input()  viewLink: string;
+  @Input() showTopContainer = true;
 
   constructor() {
   }

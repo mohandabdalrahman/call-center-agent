@@ -28,12 +28,13 @@
     </nb-action>
   </nb-actions>
 
-  <modal #confirm>
-    <div body>
-      Are you sure you want to logout?
+  <modal #confirm [size]="'sm'">
+    <div body class="confirm-content">
+      <nb-icon icon="alert-circle-outline"></nb-icon>
+      <p>Are you sure you want to logout?</p>
     </div>
 
-    <div class="footer" footer>
+    <div class="confirm-footer" footer>
       <button class="btn btn-primary" (click)="confirm.close()">No</button>
       <button class="btn btn-danger" (click)="logout()">Yes</button>
     </div>

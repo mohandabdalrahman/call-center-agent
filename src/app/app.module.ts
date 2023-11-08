@@ -10,6 +10,7 @@ import {
   NbSidebarModule,
 } from '@nebular/theme';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {NgxSpinnerModule} from "ngx-spinner";
 
 @NgModule({
   declarations: [AppComponent],

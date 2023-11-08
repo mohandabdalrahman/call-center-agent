@@ -36,7 +36,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu: NbMenuItem[] = [{title: 'Change Password', icon: "lock-outline"}, {
+  userMenu: NbMenuItem[] = [{title: 'Change Password', icon: "lock-outline" , link:'pages/change-password'}, {
     title: 'Logout',
     icon: "log-out-outline",
   }];

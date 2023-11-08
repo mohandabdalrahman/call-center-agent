@@ -1,0 +1,42 @@
+.create {
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 5px;
+
+  &-title {
+    margin-bottom: 2em;
+
+    h5 {
+      text-transform: capitalize;
+      border-bottom: 1px solid #dbdcde;
+      padding-bottom: .5em;
+      color: #174d9e;
+      margin: 0;
+
+    }
+  }
+
+  &-action {
+    text-align: center;
+    margin-top: 1em;
+
+    button {
+      text-transform: capitalize;
+    }
+  }
+
+
+}
+
+
+.form-group {
+  label {
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: .5em;
+  }
+}
+
+.col-4 {
+  margin-bottom: 1em;
+}

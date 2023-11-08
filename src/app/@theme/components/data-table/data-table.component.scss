@@ -12,6 +12,7 @@ table {
         border-top: none;
         color: $main-color;
         text-transform: capitalize;
+        font-size: 14px;
       }
     }
 
@@ -27,6 +28,14 @@ table {
 
 .data-table {
   &-header {
-    background-color: #fff
+    background-color: #fff;
+    display: flex;
+    padding: 24px;
+    align-items: center;
+    margin-bottom: 2em;
+    border-radius: 5px;
   }
 }
+
+
+

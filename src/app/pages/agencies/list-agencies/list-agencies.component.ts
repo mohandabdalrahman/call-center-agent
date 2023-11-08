@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {ColData} from "@models/column-data.model";
+import {ModalComponent} from "@theme/components/modal/modal.component";
 
 @Component({
   selector: 'list-agencies',
@@ -8,6 +9,7 @@ import {ColData} from "@models/column-data.model";
   encapsulation: ViewEncapsulation.Emulated
 })
 export class ListAgenciesComponent implements OnInit {
+  @ViewChild('addAgency') addAgencyModal: ModalComponent;
   colData: ColData[] = [];
   rowData: any[] = [];
 
@@ -22,16 +24,20 @@ export class ListAgenciesComponent implements OnInit {
   setColData() {
     this.colData = [
       {
-        field: "id",
-        header: "ID",
-      },
-      {
         field: "name",
-        header: "Name",
+        header: "callCenterName"
       },
       {
-        field: "email",
-        header: "Email",
+        field: "numOfUsers",
+        header: "number of users",
+      },
+      {
+        field: "numOfCreatedRecords",
+        header: "number of created records",
+      },
+      {
+        field: "status",
+        header: "status",
       }
     ]
   }
@@ -39,18 +45,23 @@ export class ListAgenciesComponent implements OnInit {
   setRowData() {
     this.rowData = [
       {
-        id: 1,
         name: "Agency 1",
-        email: "mohand@test.com"
-      }, {
-        id: 2,
+        numOfUsers: 100,
+        numOfCreatedRecords: 200,
+        status: "success"
+      },
+      {
         name: "Agency 2",
-        email: "mohand@test.com"
-      }, {
-        id: 3,
+        numOfUsers: 200,
+        numOfCreatedRecords: 400,
+        status: "success"
+      },
+      {
         name: "Agency 3",
-        email: "mohand@test.com"
-      }
+        numOfUsers: 500,
+        numOfCreatedRecords: 400,
+        status: "success"
+      },
     ]
   }
 }

@@ -1,7 +1,22 @@
-<data-table [colData]="colData" [rowData]="rowData">
+<data-table [colData]="colData" [rowData]="rowData" [viewLabel]="'View users'" [viewLink]="'users'">
   <ng-container header>
-    <left-table-header [name]="'agencies'" [length]="5"></left-table-header>
+    <div class="head-container">
+      <left-table-header [name]="'agencies'" [length]="5"></left-table-header>
+      <button nbButton status="success" (click)="addAgency.open()">add</button>
+    </div>
   </ng-container>
 
 
 </data-table>
+
+
+<modal #addAgency>
+  <h5 head>Add Agency</h5>
+  <div class="add-agency-field" body>
+    <label >Call Center Name:</label>
+    <input nbInput fullWidth shape="semi-round" type="text">
+  </div>
+  <div class="add-action" footer>
+    <button nbButton status="primary" (click)="addAgency.close()">Add</button>
+  </div>
+</modal>

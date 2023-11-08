@@ -23,6 +23,18 @@ const routes: Routes = [{
       loadChildren: () => import('./agencies/agencies.module').then(m => m.AgenciesModule),
     },
     {
+      path: 'telegears-users',
+      loadChildren: () => import('./telegears-users/telegears-users.module').then(m => m.TelegearsUsersModule),
+    },
+    {
+      path: 'change-password',
+      loadChildren: () => import('./settings/settings.module').then(m => m.SettingsModule),
+    },
+    {
+      path: 'patient-records',
+      loadChildren: () => import('./patient-records/patient-records.module').then(m => m.PatientRecordsModule)
+    },
+    {
       path: "",
       redirectTo: "dashboard",
       pathMatch: "full",

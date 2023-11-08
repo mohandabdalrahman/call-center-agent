@@ -12,6 +12,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/agencies',
     icon: "bulb-outline"
   },
+  {
+    title: 'Telegears Users',
+    link: '/pages/telegears-users',
+    icon: "people-outline"
+  },
+  {
+    title: 'Patient Records',
+    link: '/pages/patient-records',
+    icon: "clipboard"
+  }
   // {
   //   title: 'FEATURES',
   //   group: true,

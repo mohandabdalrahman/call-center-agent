@@ -1,0 +1,38 @@
+<spinner></spinner>
+<div class="create">
+  <div class="create-title">
+    <h5>create telegears user</h5>
+  </div>
+  <form>
+    <div class="row">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="name">User Name</label>
+          <input type="text" nbInput fullWidth shape="semi-round" id="name" placeholder="Enter User Name">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" nbInput fullWidth shape="semi-round" id="password" placeholder="Enter password">
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="form-group">
+          <label for="rights"> Access Rights</label>
+          <nb-select multiple id="rights" placeholder="Access Rights" shape="semi-round" fullWidth>
+            <nb-option value="1">call center agent</nb-option>
+            <nb-option value="2">call center admin</nb-option>
+          </nb-select>
+        </div>
+      </div>
+    </div>
+    <div class="create-action">
+      <button nbButton shape="semi-round" status="success">create User</button>
+    </div>
+  </form>
+
+</div>
+
+
+

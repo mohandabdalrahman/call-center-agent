@@ -1,0 +1,2 @@
+<!--<label [label]="label" [required]="required"></label>-->
+<input [type]="type" #input [attr.required]="required" (input)="onChange($event.target.value)" [placeholder]="placeholder"  [disabled]="disable" [ngStyle]="{'borderColor': (ref?.invalid &&ref?.touched&&ref?.errors.required) ||(ref?.invalid &&ref?.touched&&ref?.errors.pattern) ?'red':'' }" >

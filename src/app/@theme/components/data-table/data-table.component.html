@@ -1,10 +1,12 @@
 <div class="data-table">
+  <ng-container *ngIf="showTopContainer">
   <div class="data-table-header">
     <ng-content select="[header]"></ng-content>
   </div>
   <div class="data-table-search">
     <ng-content select="[search]"></ng-content>
   </div>
+  </ng-container>
   <table class="table dataTable">
     <thead>
     <tr>
@@ -15,12 +17,22 @@
     </thead>
 
     <tbody>
-    <tr *ngFor="let row of rowData">
+    <tr *ngFor="let row of rowData; let i= index">
       <td *ngFor="let key of colData">
-        {{row[key.field]}}
+        <span *ngIf="key.field !== 'status'">{{row[key.field]}}</span>
+        <nb-toggle status="success" *ngIf="key.field ==='status'"></nb-toggle>
       </td>
     <td *ngIf="tableControls">
-      <table-controls></table-controls>
+      <table-controls [deleteLabel]="deleteLabel"
+                      [showDelete]="showDelete"
+                      [showUpdate]="showUpdate"
+                      [showView]="showView"
+                      [updateLabel]="updateLabel"
+                      [viewLabel]="viewLabel"
+                      [viewLink]="viewLink"
+                      [id]="row.id ? row.id : i + 1"
+
+      ></table-controls>
     </td>
     </tbody>
   </table>
